@@ -1,0 +1,234 @@
+.why-hitech__inner {
+    background-color: var(--primary);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+
+    .heading-tag-box {
+        border: 1px solid var(--strock-dark-bg);
+    }
+
+    .heading-tag-box__dot {
+        background-color: var(--white);
+
+    }
+
+    .heading-tag-box__text {
+        color: var(--white);
+    }
+}
+
+.why-hitech__shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.why-hitech__container {
+    max-width: 1375px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.why-hitech__wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 79px;
+}
+
+.why-hitech__heading {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    h2 {
+        font-weight: 700;
+        font-size: 45px;
+        line-height: 90%;
+        letter-spacing: normal;
+        text-transform: uppercase;
+        color: var(--white);
+        font-family: var(--second-family);
+    }
+}
+
+.why-hitech__left {
+    width: 44.93%;
+    align-self: flex-start; 
+    position: sticky;
+    top: 100px;
+}
+
+.why-hitech__right {
+    width: 48.66%;
+}
+
+.why-hitech__img-box {
+    margin-right: 34px;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.why-hitech__img {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    will-change: opacity, transform;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:first-child {
+        opacity: 1;
+    }
+}
+
+.why-hitech__item {
+    padding: 40px;
+    border: 1px solid var((--strock-dark-bg));
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.why-hitech__item-left {
+
+    h4 {
+        font-family: var(--display-font);
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 90%;
+        letter-spacing: normal;
+        text-transform: uppercase;
+        color: var(--white);
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: var(--body-dark-bg);
+    }
+}
+
+.why-hitech__number {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    h5 {
+        font-family: var(--display-font);
+        font-weight: 700;
+        font-size: 80px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        text-align: right;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(135, 0, 23, 0.1) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.why-hitech__img {
+    overflow: hidden;
+}
+
+@media (max-width:1280px) {
+    .why-hitech__shape {
+        width: 300px;
+    }
+
+    .why-hitech__wrapper {
+        gap: 40px;
+    }
+
+    .why-hitech__left {
+        width: 53.93%;
+    }
+}
+
+@media (max-width:1199px) {
+    .why-hitech__wrapper {
+        flex-direction: column;
+    }
+
+    .why-hitech__left {
+        width: 100%;
+    }
+
+    .why-hitech__right {
+        width: 100%;
+    }
+
+    .why-hitech__heading {
+        margin-bottom: 35px;
+    }
+
+    .why-hitech__img-box {
+        margin-right: 0;
+    }
+
+    .why-hitech__heading h2 {
+        font-size: 60px;
+    }
+}
+
+@media (max-width:767px) {
+    .why-hitech__heading h2 {
+        font-size: 45px;
+    }
+
+    .why-hitech__inner {
+        padding: 60px 0;
+    }
+}
+
+
+@media (max-width:575px) {
+    .why-hitech__item {
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .why-hitech__number {
+        width: 100%;
+
+        h5 {
+            text-align: left;
+        }
+    }
+
+    .why-hitech__item-left {
+        width: 100%;
+    }
+
+    .why-hitech__heading h2 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width:472px) {
+    .why-hitech__heading h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width:1199px) {
+    .why-hitech__left {
+        width: 100%;
+        position: static; // পুরো left block আর sticky নয়
+    }
+
+    .why-hitech__img-box {
+        margin-right: 0;
+        position: sticky;
+        top: 20px; // চাইলে adjust করো
+    }
+}

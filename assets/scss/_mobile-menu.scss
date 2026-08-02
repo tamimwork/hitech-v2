@@ -1,0 +1,122 @@
+// ===== Mobile Menu Overlay =====
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+// ===== Mobile Menu =====
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    max-width: 85%;
+    height: 100%;
+    background-color: var(--white);
+    z-index: 1001;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    transition: right 0.4s ease;
+    overflow-y: auto;
+
+    &.active {
+        right: 0;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--strock-whtie-bg);
+    }
+
+    &__logo {
+        img {
+            width: 100px;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        flex-grow: 1;
+
+        li {
+            border-bottom: 1px solid var(--strock-whtie-bg);
+
+            a {
+                display: block;
+                padding: 15px 5px;
+                font-weight: 600;
+                font-size: 16px;
+                text-transform: capitalize;
+                color: var(--dark);
+                transition: color 0.25s ease, padding-left 0.25s ease;
+
+                &:hover,
+                &.active {
+                    color: var(--brand);
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: 25px;
+        justify-content: center;
+    }
+}
+
+.mobile-menu-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--strock-whtie-bg);
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+
+    &:hover {
+        background-color: var(--light-bg);
+        transform: rotate(90deg);
+    }
+}
+
+// prevent body scroll when menu open
+body.mobile-menu-open {
+    overflow: hidden;
+}
+
+// hamburger active state (optional icon color change etc.)
+.header__hamburger-btn {
+    cursor: pointer;
+}
+
+.mobile-menu__logo a{
+    display: block;
+}

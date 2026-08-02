@@ -1,0 +1,65 @@
+/* ═══════════════════════════════════════════════════════════
+   product-anim.scss
+   Append this block to your existing stylesheet.
+   These rules only add new selectors / properties —
+   nothing here overrides your current layout.
+═══════════════════════════════════════════════════════════ */
+
+/* ── Shape ── */
+.product__shape {
+  will-change: transform;        // GPU layer for scale + y tween
+}
+
+/* ── Heading clip-path reveal ── */
+.product__heading h2 {
+  will-change: clip-path, transform;
+}
+
+/* ── Image needs overflow:hidden so GSAP scale stays inside ── */
+.product__card-img {
+  overflow: hidden;
+
+  img {
+    display: block;
+    will-change: transform;
+  }
+}
+
+/* ── Explicit overflow on card right (shimmer must stay inside) ── */
+.product-card__right {
+  overflow: hidden;
+}
+
+/* ══════════════════════════════════════════════════════════
+   Water / Glass shimmer overlay
+   Injected by JS into each .product-card__right.
+   Uses two CSS vars (--gx / --gy) that JS updates live
+   on mousemove — no GSAP gradient interpolation needed.
+══════════════════════════════════════════════════════════ */
+.pc-shimmer {
+  --gx: 50%;
+  --gy: 50%;
+
+  position:       absolute;
+  inset:          0;
+  z-index:        2;
+  opacity:        0;
+  pointer-events: none;
+
+  /* layered radial gradients = depth / water feel */
+  background:
+    radial-gradient(
+      ellipse 55% 40% at var(--gx) var(--gy),
+      rgba(255, 255, 255, 0.30) 0%,
+      rgba(190, 215, 255, 0.13) 30%,
+      rgba(100, 160, 255, 0.05) 55%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 30% 20% at var(--gx) var(--gy),
+      rgba(255, 255, 255, 0.18) 0%,
+      transparent 55%
+    );
+
+  mix-blend-mode: overlay;      // blends with both light and dark images
+}

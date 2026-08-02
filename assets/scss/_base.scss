@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+:root {
+    --font-family: "Roboto Slab", sans-serif;
+    --second-family: "Outfit", sans-serif;
+    --heading-font: "Graham";
+    --display-font:"Playfair Display", serif;
+    --dark: #111;
+    --brand: #9c1006;
+    --dark: #111;
+    --primary: #7a0116;
+    --strock-dark-bg: rgba(255, 255, 255, 0.2);
+    --strock-whtie-bg: rgba(17, 17, 17, 0.2);
+    --body-white-bg: #555;
+    --white: #fff;
+    --body-dark-bg: rgba(255, 255, 255, 0.8);
+    --light-bg: #f6f6f6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--second-family);
+}
+
+body {
+    background-color: var(--white);
+    color: var(--dark);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.container {
+    padding: 0 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+
+.btn-black {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.btn-white {
+    background-color: var(--white);
+    color: var(--brand);
+}
+
+.btn {
+    font-weight: 600;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    gap: 10px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 0;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    border-radius: 5px;
+}
+
+.btn__left-arrow,
+.btn__right-arrow {
+    img {
+        width: 12px;
+    }
+}
+
+.btn-black:hover {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.btn-white:hover {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.btn-black:hover .btn__left-arrow {
+    background-color: var(--dark);
+}
+
+.btn-white:hover .btn__left-arrow {
+    background-color: var(--white);
+}
+
+.btn:hover .btn__left-arrow {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+
+}
+
+.btn:hover .btn__text {
+    -webkit-transform: translateX(37px);
+    transform: translateX(37px);
+}
+
+.btn:hover .btn__right-arrow {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+.btn .btn__text {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-transform: capitalize;
+    padding: 0px 69px 0 24px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.btn .btn__left-arrow,
+.btn .btn__right-arrow {
+    height: 30px;
+    position: absolute;
+    text-align: center;
+    width: 30px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    border-radius: 5px;
+}
+
+.btn-black .btn__left-arrow,
+.btn-black .btn__right-arrow {
+    background-color: var(--white);
+}
+
+.btn-white .btn__left-arrow,
+.btn-white .btn__right-arrow {
+    background-color: var(--brand);
+}
+
+.btn .btn__left-arrow {
+    left: 10px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+.btn .btn__right-arrow {
+    left: auto;
+    right: 10px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.heading-tag-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 34px;
+    border: 1px solid var(--strock-whtie-bg);
+    justify-content: center;
+    padding: 0 14px;
+    max-width: max-content;
+}
+.heading-tag-box__dot{
+    width: 6px;
+    height: 6px;
+    background-color: var(--brand);
+}
+.heading-tag-box__text{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-transform: capitalize;
+    color: var(--dark);
+}
